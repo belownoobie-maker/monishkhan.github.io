@@ -57,7 +57,7 @@
         </div>
     </header>
 
-    <section id="experience" class="py-20 px-6">
+    <section id="experience" class="py-20 px-6 bg-slate-950/20">
         <div class="max-w-4xl mx-auto animate-on-scroll">
             <h3 class="text-4xl font-bold mb-16 text-center">Timeline of Impact</h3>
             <div class="relative pl-12">
@@ -96,11 +96,28 @@
                         </ul>
                     </div>
                 </div>
+
+                <div class="relative hover-lift animate-on-scroll">
+                    <div class="absolute -left-[45px] top-2 w-6 h-6 rounded-full bg-pink-500 border-4 border-slate-950"></div>
+                    <div class="glass p-8 rounded-3xl">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h4 class="text-2xl font-bold">Freelance</h4>
+                                <p class="text-pink-400 font-semibold">Video Editor</p>
+                            </div>
+                            <span class="text-sm text-slate-500 bg-slate-900 px-3 py-1 rounded-full">2023 - 2024</span>
+                        </div>
+                        <ul class="text-slate-400 space-y-2 list-none">
+                            <li>• Collaborated with global gaming creators (USA, Canada, Australia).</li>
+                            <li>• Scaled a U.S. Twitch streamer from 1k to 20.5k followers in 2.5 months.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="work" class="py-20 px-6 bg-slate-950/30">
+    <section id="work" class="py-20 px-6">
         <div class="max-w-6xl mx-auto animate-on-scroll">
             <h3 class="text-4xl font-bold mb-16 text-center">Proof of Work</h3>
             
@@ -118,27 +135,60 @@
                 <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/J2shhMxf2JM"></iframe>
                 <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/wCNkyoEOXds"></iframe>
             </div>
-            <!-- (Similar logic for other categories hidden by default...) -->
+            <div id="content-podcast" class="category-content grid md:grid-cols-3 gap-8 hidden">
+                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/mVgJjDvDqn4"></iframe>
+                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/PANOYpAWQtA"></iframe>
+                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/J2shhMxf2JM"></iframe>
+            </div>
+            <div id="content-documentary" class="category-content grid md:grid-cols-3 gap-8 hidden">
+                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/wCNkyoEOXds"></iframe>
+                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/mVgJjDvDqn4"></iframe>
+                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/PANOYpAWQtA"></iframe>
+            </div>
+            <div id="content-shorts" class="category-content grid md:grid-cols-3 gap-8 hidden">
+                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/J2shhMxf2JM"></iframe>
+                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/wCNkyoEOXds"></iframe>
+                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/mVgJjDvDqn4"></iframe>
+            </div>
+            <div id="content-branded" class="category-content grid md:grid-cols-3 gap-8 hidden">
+                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/PANOYpAWQtA"></iframe>
+                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/J2shhMxf2JM"></iframe>
+                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/wCNkyoEOXds"></iframe>
+            </div>
         </div>
     </section>
 
-    <section id="testimonials" class="py-20 px-6">
-        <div class="max-w-4xl mx-auto animate-on-scroll">
+    <section id="testimonials" class="py-20 px-6 bg-slate-950/20">
+        <div class="max-w-5xl mx-auto animate-on-scroll">
             <h3 class="text-4xl font-bold mb-16 text-center">Client Feedback</h3>
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Client -->
+                <!-- T1 -->
                 <div class="glass p-8 rounded-3xl hover-lift">
                     <i class="fas fa-quote-left text-blue-500 mb-4 text-2xl"></i>
                     <p class="text-slate-300 italic mb-6">"Monish has an incredible eye for retention. He completely transformed our editing workflow and helped us hit millions of views consistently. A true storyteller."</p>
                     <h5 class="font-bold text-white">Top Creator Client</h5>
                     <p class="text-sm text-slate-500">YouTube Partner</p>
                 </div>
-                <!-- Colleague -->
+                <!-- T2 -->
                 <div class="glass p-8 rounded-3xl hover-lift">
                     <i class="fas fa-quote-left text-purple-500 mb-4 text-2xl"></i>
                     <p class="text-slate-300 italic mb-6">"Monish combines deep technical knowledge with creative storytelling. His reliability and attention to detail during our university projects were always top-notch."</p>
                     <h5 class="font-bold text-white">Professional Peer</h5>
                     <p class="text-sm text-slate-500">Jamia Hamdard Alumnus</p>
+                </div>
+                <!-- T3 (New) -->
+                <div class="glass p-8 rounded-3xl hover-lift">
+                    <i class="fas fa-quote-left text-pink-500 mb-4 text-2xl"></i>
+                    <p class="text-slate-300 italic mb-6">"Working with Monish was a game-changer. He understands the nuances of pacing and music that make a video truly viral. Highly recommend!"</p>
+                    <h5 class="font-bold text-white">Content Creator</h5>
+                    <p class="text-sm text-slate-500">Collaborator</p>
+                </div>
+                <!-- T4 (New) -->
+                <div class="glass p-8 rounded-3xl hover-lift">
+                    <i class="fas fa-quote-left text-emerald-500 mb-4 text-2xl"></i>
+                    <p class="text-slate-300 italic mb-6">"His ability to handle high-pressure deadlines while maintaining top-tier quality is rare. A fantastic editor and an even better collaborator."</p>
+                    <h5 class="font-bold text-white">Creative Agency Lead</h5>
+                    <p class="text-sm text-slate-500">Brand Manager</p>
                 </div>
             </div>
         </div>
