@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monish Khan | Creative Video Editor</title>
+    <title>Monish Khan | Senior Video Editor & Storyteller</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -18,6 +18,8 @@
         .timeline-line { position: absolute; left: 16px; top: 0; bottom: 0; width: 2px; background: rgba(59, 130, 246, 0.3); }
         .hover-lift { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .hover-lift:hover { transform: translateY(-5px); }
+        .aspect-video-custom { aspect-ratio: 16/9; }
+        .aspect-reels { aspect-ratio: 9/16; }
     </style>
 </head>
 <body class="antialiased selection:bg-blue-500/30">
@@ -28,6 +30,7 @@
             <div class="glass px-6 py-2 rounded-full space-x-6 text-sm font-medium">
                 <a href="#about" class="hover:text-blue-400 transition">About</a>
                 <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
+                <a href="#work" class="hover:text-blue-400 transition">Proof of Work</a>
                 <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
             </div>
         </div>
@@ -53,7 +56,6 @@
             <div class="relative pl-12">
                 <div class="timeline-line"></div>
                 
-                <!-- Passenger Paramvir -->
                 <div class="mb-12 relative hover-lift">
                     <div class="absolute -left-[45px] top-2 w-6 h-6 rounded-full bg-blue-500 border-4 border-slate-950"></div>
                     <div class="glass p-8 rounded-3xl">
@@ -66,13 +68,11 @@
                         </div>
                         <ul class="text-slate-400 space-y-2 list-none">
                             <li>• Managed content for 2M+ subscriber YouTube channel.</li>
-                            <li>• Produced sponsored content for major brands: ChatGPT, Dove, OPPO, ICICI, Skyscanner.</li>
-                            <li>• Expert in multi-format production (Podcasts, YouTube Shorts, Reels).</li>
+                            <li>• Produced sponsored content for ChatGPT, Dove, OPPO.</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Numo Media -->
                 <div class="mb-12 relative hover-lift">
                     <div class="absolute -left-[45px] top-2 w-6 h-6 rounded-full bg-purple-500 border-4 border-slate-950"></div>
                     <div class="glass p-8 rounded-3xl">
@@ -84,14 +84,12 @@
                             <span class="text-sm text-slate-500 bg-slate-900 px-3 py-1 rounded-full">2024 - 2025</span>
                         </div>
                         <ul class="text-slate-400 space-y-2 list-none">
-                            <li>• Supervised end-to-end workflow for a team of 15+ editors.</li>
-                            <li>• Maintained quality standards across all deliverables.</li>
-                            <li>• Streamlined production timelines for maximum efficiency.</li>
+                            <li>• Supervised workflow for a team of 15+ editors.</li>
+                            <li>• Streamlined processes for high-volume delivery.</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Freelance -->
                 <div class="relative hover-lift">
                     <div class="absolute -left-[45px] top-2 w-6 h-6 rounded-full bg-pink-500 border-4 border-slate-950"></div>
                     <div class="glass p-8 rounded-3xl">
@@ -103,8 +101,8 @@
                             <span class="text-sm text-slate-500 bg-slate-900 px-3 py-1 rounded-full">2023 - 2024</span>
                         </div>
                         <ul class="text-slate-400 space-y-2 list-none">
-                            <li>• Collaborated with gaming creators: ImFiji, KGU, BIXU.</li>
-                            <li>• Helped US streamer grow from 1k to 20.5k followers in 2.5 months.</li>
+                            <li>• Collaborated with gaming creators (ImFiji, KGU, BIXU).</li>
+                            <li>• Scaled Twitch creator from 1k to 20.5k followers.</li>
                         </ul>
                     </div>
                 </div>
@@ -112,23 +110,107 @@
         </div>
     </section>
 
-    <section class="py-20 px-6 bg-white/5">
-        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
-            <div class="glass p-8 rounded-3xl">
-                <h4 class="text-2xl font-bold mb-6">Technical Stack</h4>
-                <div class="flex flex-wrap gap-3">
-                    <span class="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-xl">Adobe Premiere Pro</span>
-                    <span class="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-xl">Adobe After Effects</span>
-                    <span class="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-xl">Adobe Photoshop</span>
+    <section id="work" class="py-20 px-6 bg-slate-950/50">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-4xl font-bold mb-4 text-center">Proof of Work</h3>
+            <p class="text-slate-400 text-center mb-16">Selected projects and high-retention edits.</p>
+            
+            <div class="mb-24">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <h4 class="text-2xl font-bold text-white">Featured YouTube Projects</h4>
+                        <p class="text-slate-400 text-sm mt-2">Long-form content & high-engagement documentaries</p>
+                    </div>
+                    <div class="flex gap-3 hidden sm:flex">
+                        <button onclick="slideLeft()" class="p-3 rounded-xl glass hover:bg-blue-600/20 hover:border-blue-500/50 transition text-white">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button onclick="slideRight()" class="p-3 rounded-xl glass hover:bg-blue-600/20 hover:border-blue-500/50 transition text-white">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="overflow-hidden relative w-full py-4 -my-4" id="slider-container">
+                    <div class="flex gap-6 transition-transform duration-500 ease-in-out w-full" id="slider-track">
+                        
+                        <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] slider-card">
+                            <div class="glass p-4 rounded-3xl h-full flex flex-col group hover-lift border-t border-white/5">
+                                <div class="aspect-video-custom bg-black rounded-2xl overflow-hidden mb-5 relative">
+                                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/PANOYpAWQtA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <h5 class="text-xl font-bold px-2 mb-1">Viral Hit #1</h5>
+                            </div>
+                        </div>
+
+                        <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] slider-card">
+                            <div class="glass p-4 rounded-3xl h-full flex flex-col group hover-lift border-t border-white/5">
+                                <div class="aspect-video-custom bg-black rounded-2xl overflow-hidden mb-5 relative">
+                                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/J2shhMxf2JM?start=1483" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <h5 class="text-xl font-bold px-2 mb-1">Viral Hit #2</h5>
+                            </div>
+                        </div>
+
+                        <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] slider-card">
+                            <div class="glass p-4 rounded-3xl h-full flex flex-col group hover-lift border-t border-white/5">
+                                <div class="aspect-video-custom bg-black rounded-2xl overflow-hidden mb-5 relative">
+                                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/wCNkyoEOXds?start=394" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <h5 class="text-xl font-bold px-2 mb-1">Viral Hit #3</h5>
+                            </div>
+                        </div>
+                        
+                        <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] slider-card">
+                            <div class="glass p-4 rounded-3xl h-full flex flex-col group hover-lift border-t border-white/5">
+                                <div class="aspect-video-custom bg-black rounded-2xl overflow-hidden mb-5 relative">
+                                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/mVgJjDvDqn4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <h5 class="text-xl font-bold px-2 mb-1">Viral Hit #4</h5>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-            <div class="glass p-8 rounded-3xl">
-                <h4 class="text-2xl font-bold mb-6">Education</h4>
-                <div class="space-y-4">
-                    <p class="font-semibold text-white">B.Tech (ECE) | Jamia Hamdard, New Delhi</p>
-                    <p class="text-slate-400 text-sm">2017 - 2021</p>
-                    <p class="font-semibold text-white">Senior Secondary (XII) | Holy Angel School, Hisar</p>
-                    <p class="text-slate-400 text-sm">2016 - 2017</p>
+
+            <!-- Branded Collaborations Section -->
+            <div>
+                <div class="mb-10 text-center">
+                    <h4 class="text-3xl font-bold text-white mb-2">Branded Collaborations</h4>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <!-- Brand Cards -->
+                    <div class="group relative hover-lift cursor-pointer">
+                        <div class="aspect-reels bg-gradient-to-b from-emerald-900/40 to-slate-900 rounded-2xl border border-white/10 overflow-hidden relative flex items-center justify-center text-center">
+                            <i class="fas fa-robot text-4xl text-emerald-400/80"></i>
+                            <span class="absolute bottom-4 font-bold">ChatGPT</span>
+                        </div>
+                    </div>
+                    <div class="group relative hover-lift cursor-pointer">
+                        <div class="aspect-reels bg-gradient-to-b from-blue-900/40 to-slate-900 rounded-2xl border border-white/10 overflow-hidden relative flex items-center justify-center text-center">
+                            <i class="fas fa-dove text-4xl text-blue-400/80"></i>
+                            <span class="absolute bottom-4 font-bold">Dove</span>
+                        </div>
+                    </div>
+                    <div class="group relative hover-lift cursor-pointer">
+                        <div class="aspect-reels bg-gradient-to-b from-green-900/40 to-slate-900 rounded-2xl border border-white/10 overflow-hidden relative flex items-center justify-center text-center">
+                            <i class="fas fa-mobile-alt text-4xl text-green-400/80"></i>
+                            <span class="absolute bottom-4 font-bold">OPPO</span>
+                        </div>
+                    </div>
+                    <div class="group relative hover-lift cursor-pointer">
+                        <div class="aspect-reels bg-gradient-to-b from-orange-900/40 to-slate-900 rounded-2xl border border-white/10 overflow-hidden relative flex items-center justify-center text-center">
+                            <i class="fas fa-building-columns text-4xl text-orange-400/80"></i>
+                            <span class="absolute bottom-4 font-bold">ICICI</span>
+                        </div>
+                    </div>
+                    <div class="group relative hover-lift cursor-pointer">
+                        <div class="aspect-reels bg-gradient-to-b from-cyan-900/40 to-slate-900 rounded-2xl border border-white/10 overflow-hidden relative flex items-center justify-center text-center">
+                            <i class="fas fa-plane-departure text-4xl text-cyan-400/80"></i>
+                            <span class="absolute bottom-4 font-bold">Skyscanner</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -146,5 +228,33 @@
         </div>
         <p class="text-slate-500">Based in New Delhi, India | Hindi & English Speaker</p>
     </footer>
+
+    <script>
+        let currentSlide = 0;
+        function getVisibleSlides() {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 768) return 2;
+            return 1;
+        }
+        function updateSliderPosition() {
+            const track = document.getElementById('slider-track');
+            if(!track) return;
+            const slideWidth = track.children[0].getBoundingClientRect().width;
+            track.style.transform = `translateX(-${currentSlide * (slideWidth + 24)}px)`;
+        }
+        function slideRight() {
+            const track = document.getElementById('slider-track');
+            const maxSlide = track.children.length - getVisibleSlides();
+            currentSlide = (currentSlide < maxSlide) ? currentSlide + 1 : 0;
+            updateSliderPosition();
+        }
+        function slideLeft() {
+            const track = document.getElementById('slider-track');
+            const maxSlide = track.children.length - getVisibleSlides();
+            currentSlide = (currentSlide > 0) ? currentSlide - 1 : maxSlide;
+            updateSliderPosition();
+        }
+        window.addEventListener('resize', updateSliderPosition);
+    </script>
 </body>
 </html>
