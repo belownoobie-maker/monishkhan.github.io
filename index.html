@@ -8,35 +8,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { 
-            background: radial-gradient(circle at top right, #1e1b4b, #020617);
-            color: #f8fafc; 
-            font-family: 'Inter', sans-serif; 
-        }
+        body { background: radial-gradient(circle at top right, #1e1b4b, #020617); color: #f8fafc; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .timeline-line { position: absolute; left: 16px; top: 0; bottom: 0; width: 2px; background: rgba(59, 130, 246, 0.3); }
-        .hover-lift { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .hover-lift:hover { transform: translateY(-5px); }
-        .aspect-video-custom { aspect-ratio: 16/9; }
-        .aspect-reels { aspect-ratio: 9/16; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .timeline-line { position: absolute; left: 16px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #3b82f6, #a855f7, #ec4899); }
+        .hover-lift { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .hover-lift:hover { transform: translateY(-8px) scale(1.02); }
+        .tab-btn { transition: all 0.3s ease; }
+        .tab-btn.active { background: rgba(59, 130, 246, 0.2); border-color: #3b82f6; color: #60a5fa; }
+        
+        /* Scroll Animation Classes */
+        .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .is-visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body class="antialiased selection:bg-blue-500/30">
 
-    <nav class="fixed w-full z-50 p-6">
-        <div class="max-w-6xl mx-auto flex items-center justify-between">
-            <span class="text-2xl font-bold tracking-tighter text-white">MONISH<span class="text-blue-500">.</span></span>
-            <div class="glass px-6 py-2 rounded-full space-x-6 text-sm font-medium">
+    <nav class="fixed w-full z-50 p-6 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto flex items-center justify-between glass px-6 py-3 rounded-full">
+            <span class="text-xl font-bold tracking-tighter text-white">MONISH<span class="text-blue-500">.</span></span>
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
                 <a href="#about" class="hover:text-blue-400 transition">About</a>
                 <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
-                <a href="#work" class="hover:text-blue-400 transition">Proof of Work</a>
+                <a href="#work" class="hover:text-blue-400 transition">Work</a>
                 <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header class="pt-40 pb-20 px-6">
+    <header id="about" class="pt-40 pb-20 px-6 animate-on-scroll">
         <div class="max-w-4xl mx-auto text-center space-y-6">
             <div class="inline-block px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-4">
                 Senior Video Editor & Storyteller
@@ -51,12 +51,13 @@
     </header>
 
     <section id="experience" class="py-20 px-6">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-4xl mx-auto animate-on-scroll">
             <h3 class="text-4xl font-bold mb-16 text-center">Timeline of Impact</h3>
             <div class="relative pl-12">
                 <div class="timeline-line"></div>
                 
-                <div class="mb-12 relative hover-lift">
+                <!-- Experience 1 -->
+                <div class="mb-12 relative hover-lift animate-on-scroll">
                     <div class="absolute -left-[45px] top-2 w-6 h-6 rounded-full bg-blue-500 border-4 border-slate-950"></div>
                     <div class="glass p-8 rounded-3xl">
                         <div class="flex justify-between items-start mb-4">
@@ -67,43 +68,46 @@
                             <span class="text-sm text-slate-500 bg-slate-900 px-3 py-1 rounded-full">2025 - 2026</span>
                         </div>
                         <ul class="text-slate-400 space-y-2 list-none">
-                            <li>• Managed content for 2M+ subscriber YouTube channel.</li>
-                            <li>• Produced sponsored content for client like ChatGPT, Dove, OPPO , Sky scanner , ICICI Lombard.</li>
-                            <li>• Produced multi-format content: podcasts, YouTube Shorts, and Reels.</li>
+                            <li>• Edited, managed, and enhanced content quality for the main YouTube channel with over 2M+ subscribers.</li>
+                            <li>• Produced and edited sponsored content for major brand collaborations (ChatGPT, Dove, OPPO, ICICI, Skyscanner).</li>
+                            <li>• Developed content across podcasts, Shorts, and Reels.</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="mb-12 relative hover-lift">
+                <!-- Experience 2 -->
+                <div class="mb-12 relative hover-lift animate-on-scroll">
                     <div class="absolute -left-[45px] top-2 w-6 h-6 rounded-full bg-purple-500 border-4 border-slate-950"></div>
                     <div class="glass p-8 rounded-3xl">
                         <div class="flex justify-between items-start mb-4">
                             <div>
-                                <h4 class="text-2xl font-bold">Numo Media</h4>
+                                <h4 class="text-2xl font-bold">NUMO MEDIA</h4>
                                 <p class="text-purple-400 font-semibold">Product Manager</p>
                             </div>
                             <span class="text-sm text-slate-500 bg-slate-900 px-3 py-1 rounded-full">2024 - 2025</span>
                         </div>
                         <ul class="text-slate-400 space-y-2 list-none">
-                            <li>• Supervised workflow for a team of 15+ editors.</li>
-                            <li>• Streamlined processes for high-volume delivery.</li>
+                            <li>• Supervised end-to-end operations and workflow of a team of 15+ editors.</li>
+                            <li>• Ensured consistent quality standards and continuous improvement.</li>
+                            <li>• Streamlined editing processes to improve efficiency and maintain timelines.</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="relative hover-lift">
+                <!-- Experience 3 -->
+                <div class="mb-12 relative hover-lift animate-on-scroll">
                     <div class="absolute -left-[45px] top-2 w-6 h-6 rounded-full bg-pink-500 border-4 border-slate-950"></div>
                     <div class="glass p-8 rounded-3xl">
                         <div class="flex justify-between items-start mb-4">
                             <div>
-                                <h4 class="text-2xl font-bold">Freelance Editor</h4>
-                                <p class="text-pink-400 font-semibold">Creative Partner</p>
+                                <h4 class="text-2xl font-bold">Freelance</h4>
+                                <p class="text-pink-400 font-semibold">Video Editor</p>
                             </div>
                             <span class="text-sm text-slate-500 bg-slate-900 px-3 py-1 rounded-full">2023 - 2024</span>
                         </div>
                         <ul class="text-slate-400 space-y-2 list-none">
-                            <li>• Collaborated with gaming creators (ImFiji, KGU, BIXU).</li>
-                            <li>• Scaled Twitch creator from 1k to 20.5k followers.</li>
+                            <li>• Collaborated with global gaming creators (ImFiji, KGU, BIXU).</li>
+                            <li>• Produced daily videos for U.S. Twitch streamers, growing channels from 1k to 20k+ followers.</li>
                         </ul>
                     </div>
                 </div>
@@ -111,119 +115,72 @@
         </div>
     </section>
 
-    <section id="work" class="py-20 px-6 bg-slate-950/50">
-        <div class="max-w-6xl mx-auto">
-            <h3 class="text-4xl font-bold mb-4 text-center">Proof of Work</h3>
-            <p class="text-slate-400 text-center mb-16">Selected projects and high-retention edits.</p>
+    <section id="work" class="py-20 px-6 bg-slate-950/30">
+        <div class="max-w-6xl mx-auto animate-on-scroll">
+            <h3 class="text-4xl font-bold mb-16 text-center">Proof of Work</h3>
             
-            <div class="mb-24">
-                <div class="flex justify-between items-end mb-8">
-                    <div>
-                        <h4 class="text-2xl font-bold text-white">Featured YouTube Projects</h4>
-                        <p class="text-slate-400 text-sm mt-2">Long-form content & high-engagement documentaries</p>
-                    </div>
-                    <div class="flex gap-3 hidden sm:flex">
-                        <button onclick="slideLeft()" class="p-3 rounded-xl glass hover:bg-blue-600/20 hover:border-blue-500/50 transition text-white">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button onclick="slideRight()" class="p-3 rounded-xl glass hover:bg-blue-600/20 hover:border-blue-500/50 transition text-white">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="overflow-hidden relative w-full py-4 -my-4" id="slider-container">
-                    <div class="flex gap-6 transition-transform duration-500 ease-in-out w-full" id="slider-track">
-                        
-                        <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] slider-card">
-                            <div class="glass p-4 rounded-3xl h-full flex flex-col group hover-lift border-t border-white/5">
-                                <div class="aspect-video-custom bg-black rounded-2xl overflow-hidden mb-5 relative">
-                                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/PANOYpAWQtA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <h5 class="text-xl font-bold px-2 mb-1">Viral Hit #1</h5>
-                            </div>
-                        </div>
+            <div class="flex flex-wrap justify-center gap-2 mb-12">
+                <button onclick="showCategory('vlogs')" class="tab-btn active px-6 py-2 rounded-full glass border transition">Vlogs</button>
+                <button onclick="showCategory('podcast')" class="tab-btn px-6 py-2 rounded-full glass border transition">Podcast</button>
+                <button onclick="showCategory('documentary')" class="tab-btn px-6 py-2 rounded-full glass border transition">Documentary</button>
+                <button onclick="showCategory('shorts')" class="tab-btn px-6 py-2 rounded-full glass border transition">Shorts</button>
+                <button onclick="showCategory('branded')" class="tab-btn px-6 py-2 rounded-full glass border transition">Branded Content</button>
+            </div>
 
-                        <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] slider-card">
-                            <div class="glass p-4 rounded-3xl h-full flex flex-col group hover-lift border-t border-white/5">
-                                <div class="aspect-video-custom bg-black rounded-2xl overflow-hidden mb-5 relative">
-                                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/J2shhMxf2JM?start=1483" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <h5 class="text-xl font-bold px-2 mb-1">Viral Hit #2</h5>
-                            </div>
-                        </div>
-
-                        <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] slider-card">
-                            <div class="glass p-4 rounded-3xl h-full flex flex-col group hover-lift border-t border-white/5">
-                                <div class="aspect-video-custom bg-black rounded-2xl overflow-hidden mb-5 relative">
-                                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/wCNkyoEOXds?start=394" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <h5 class="text-xl font-bold px-2 mb-1">Viral Hit #3</h5>
-                            </div>
-                        </div>
-                        
-                        <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] slider-card">
-                            <div class="glass p-4 rounded-3xl h-full flex flex-col group hover-lift border-t border-white/5">
-                                <div class="aspect-video-custom bg-black rounded-2xl overflow-hidden mb-5 relative">
-                                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/mVgJjDvDqn4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <h5 class="text-xl font-bold px-2 mb-1">Viral Hit #4</h5>
-                            </div>
-                        </div>
-
-                    </div>
+            <!-- VLOGS -->
+            <div id="content-vlogs" class="category-content">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <iframe class="w-full aspect-video rounded-2xl glass hover-lift" src="https://www.youtube.com/embed/PANOYpAWQtA"></iframe>
+                    <iframe class="w-full aspect-video rounded-2xl glass hover-lift" src="https://www.youtube.com/embed/J2shhMxf2JM"></iframe>
+                    <iframe class="w-full aspect-video rounded-2xl glass hover-lift" src="https://www.youtube.com/embed/wCNkyoEOXds"></iframe>
                 </div>
             </div>
 
-            <!-- Branded Collaborations Section -->
-            <div>
-                <div class="mb-10 text-center">
-                    <h4 class="text-3xl font-bold text-white mb-2">Branded Collaborations</h4>
+            <!-- PODCAST -->
+            <div id="content-podcast" class="category-content hidden">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <iframe class="w-full aspect-video rounded-2xl glass hover-lift" src="https://www.youtube.com/embed/mVgJjDvDqn4"></iframe>
+                    <iframe class="w-full aspect-video rounded-2xl glass hover-lift" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+                    <iframe class="w-full aspect-video rounded-2xl glass hover-lift" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                    <!-- Brand Cards -->
-                    <div class="group relative hover-lift cursor-pointer">
-                        <div class="aspect-reels bg-gradient-to-b from-emerald-900/40 to-slate-900 rounded-2xl border border-white/10 overflow-hidden relative flex items-center justify-center text-center">
-                            <i class="fas fa-robot text-4xl text-emerald-400/80"></i>
-                            <span class="absolute bottom-4 font-bold">ChatGPT</span>
-                        </div>
-                    </div>
-                    <div class="group relative hover-lift cursor-pointer">
-                        <div class="aspect-reels bg-gradient-to-b from-blue-900/40 to-slate-900 rounded-2xl border border-white/10 overflow-hidden relative flex items-center justify-center text-center">
-                            <i class="fas fa-dove text-4xl text-blue-400/80"></i>
-                            <span class="absolute bottom-4 font-bold">Dove</span>
-                        </div>
-                    </div>
-                    <div class="group relative hover-lift cursor-pointer">
-                        <div class="aspect-reels bg-gradient-to-b from-green-900/40 to-slate-900 rounded-2xl border border-white/10 overflow-hidden relative flex items-center justify-center text-center">
-                            <i class="fas fa-mobile-alt text-4xl text-green-400/80"></i>
-                            <span class="absolute bottom-4 font-bold">OPPO</span>
-                        </div>
-                    </div>
-                    <div class="group relative hover-lift cursor-pointer">
-                        <div class="aspect-reels bg-gradient-to-b from-orange-900/40 to-slate-900 rounded-2xl border border-white/10 overflow-hidden relative flex items-center justify-center text-center">
-                            <i class="fas fa-building-columns text-4xl text-orange-400/80"></i>
-                            <span class="absolute bottom-4 font-bold">ICICI</span>
-                        </div>
-                    </div>
-                    <div class="group relative hover-lift cursor-pointer">
-                        <div class="aspect-reels bg-gradient-to-b from-cyan-900/40 to-slate-900 rounded-2xl border border-white/10 overflow-hidden relative flex items-center justify-center text-center">
-                            <i class="fas fa-plane-departure text-4xl text-cyan-400/80"></i>
-                            <span class="absolute bottom-4 font-bold">Skyscanner</span>
-                        </div>
-                    </div>
+            </div>
+
+            <!-- DOCUMENTARY -->
+            <div id="content-documentary" class="category-content hidden">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <iframe class="w-full aspect-video rounded-2xl glass hover-lift" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+                    <iframe class="w-full aspect-video rounded-2xl glass hover-lift" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+                    <iframe class="w-full aspect-video rounded-2xl glass hover-lift" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+                </div>
+            </div>
+
+            <!-- SHORTS -->
+            <div id="content-shorts" class="category-content hidden">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <iframe class="w-full aspect-video rounded-2xl glass hover-lift" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+                    <iframe class="w-full aspect-video rounded-2xl glass hover-lift" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+                    <iframe class="w-full aspect-video rounded-2xl glass hover-lift" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+                </div>
+            </div>
+
+            <!-- BRANDED CONTENT -->
+            <div id="content-branded" class="category-content hidden">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <iframe class="w-full aspect-video rounded-2xl glass hover-lift" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+                    <iframe class="w-full aspect-video rounded-2xl glass hover-lift" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+                    <iframe class="w-full aspect-video rounded-2xl glass hover-lift" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="py-20 text-center px-6">
+    <footer id="contact" class="py-20 text-center px-6 animate-on-scroll">
         <h3 class="text-4xl font-bold mb-8">Ready to bring your vision to life?</h3>
         <div class="flex justify-center gap-6 mb-8">
-            <a href="mailto:monyzzzssj@gmail.com" class="flex items-center gap-2 text-blue-400 hover:text-white transition bg-blue-500/10 px-6 py-3 rounded-xl border border-blue-500/20">
+            <a href="mailto:monyzzzssj@gmail.com" class="flex items-center gap-2 text-blue-400 hover:text-white transition bg-blue-500/10 px-6 py-3 rounded-xl border border-blue-500/20 hover-lift">
                 <i class="fas fa-envelope"></i> monyzzzssj@gmail.com
             </a>
-            <a href="tel:+918053949555" class="flex items-center gap-2 text-pink-400 hover:text-white transition bg-pink-500/10 px-6 py-3 rounded-xl border border-pink-500/20">
+            <a href="tel:+918053949555" class="flex items-center gap-2 text-pink-400 hover:text-white transition bg-pink-500/10 px-6 py-3 rounded-xl border border-pink-500/20 hover-lift">
                 <i class="fas fa-phone"></i> +91 8053949555
             </a>
         </div>
@@ -231,31 +188,25 @@
     </footer>
 
     <script>
-        let currentSlide = 0;
-        function getVisibleSlides() {
-            if (window.innerWidth >= 1024) return 3;
-            if (window.innerWidth >= 768) return 2;
-            return 1;
+        function showCategory(categoryId) {
+            document.querySelectorAll('.category-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById('content-' + categoryId).classList.remove('hidden');
+            event.target.classList.add('active');
         }
-        function updateSliderPosition() {
-            const track = document.getElementById('slider-track');
-            if(!track) return;
-            const slideWidth = track.children[0].getBoundingClientRect().width;
-            track.style.transform = `translateX(-${currentSlide * (slideWidth + 24)}px)`;
-        }
-        function slideRight() {
-            const track = document.getElementById('slider-track');
-            const maxSlide = track.children.length - getVisibleSlides();
-            currentSlide = (currentSlide < maxSlide) ? currentSlide + 1 : 0;
-            updateSliderPosition();
-        }
-        function slideLeft() {
-            const track = document.getElementById('slider-track');
-            const maxSlide = track.children.length - getVisibleSlides();
-            currentSlide = (currentSlide > 0) ? currentSlide - 1 : maxSlide;
-            updateSliderPosition();
-        }
-        window.addEventListener('resize', updateSliderPosition);
+
+        // Scroll Animation Observer
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
