@@ -21,6 +21,16 @@
         /* Scroll Animation Classes */
         .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .is-visible { opacity: 1; transform: translateY(0); }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-blue-500/30">
@@ -79,7 +89,7 @@
     </header>
 
     <section id="work" class="py-20 px-6 bg-slate-950/20">
-        <div class="max-w-6xl mx-auto animate-on-scroll">
+        <div class="max-w-6xl mx-auto animate-on-scroll relative">
             <h3 class="text-4xl font-bold mb-16 text-center">Proof of Work</h3>
             
             <div class="flex flex-wrap justify-center gap-2 mb-12">
@@ -88,22 +98,57 @@
                 <button onclick="showCategory('podcast', this)" class="tab-btn px-6 py-2 rounded-full glass border transition">Podcast</button>
             </div>
 
+            <!-- Slider Controls (Desktop) -->
+            <button onclick="slideContent('left')" class="hidden md:flex absolute left-0 top-[60%] -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full glass items-center justify-center hover:bg-blue-500/20 text-slate-300 hover:text-white transition z-10 shadow-lg border border-slate-700">
+                <i class="fas fa-chevron-left text-xl"></i>
+            </button>
+            <button onclick="slideContent('right')" class="hidden md:flex absolute right-0 top-[60%] -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full glass items-center justify-center hover:bg-blue-500/20 text-slate-300 hover:text-white transition z-10 shadow-lg border border-slate-700">
+                <i class="fas fa-chevron-right text-xl"></i>
+            </button>
+
             <!-- Categories -->
-            <div id="content-vlogs" class="category-content grid md:grid-cols-3 gap-8">
-                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/PANOYpAWQtA"></iframe>
-                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/J2shhMxf2JM"></iframe>
-                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/wCNkyoEOXds"></iframe>
-                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/wCNkyoEOXds"></iframe>
-                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/wCNkyoEOXds"></iframe>
-            </div>
-            <div id="content-podcast" class="category-content grid md:grid-cols-3 gap-8 hidden">
-                <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/zK0Ot-jieCA"></iframe>
-            </div>
-            <div id="content-branded" class="category-content grid md:grid-cols-3 gap-8 hidden">
-                <iframe class="w-full aspect-[9/16] rounded-2xl glass" src="https://www.youtube.com/embed/uEwSoK3VO4w" title="YouTube Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <iframe class="w-full aspect-[9/16] rounded-2xl glass" src="https://www.instagram.com/reel/DNVY2oDyFzu/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-                <iframe class="w-full aspect-[9/16] rounded-2xl glass" src="https://www.instagram.com/reel/DVD0QlWj5KF/?igsh=MXR6MWFueXA2OXMybQ%3D%3D" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-                <iframe class="w-full aspect-[9/16] rounded-2xl glass" src="https://www.youtube.com/embed/e_Uoo5nFAAA" title="YouTube Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="overflow-hidden relative w-full">
+                <!-- Vlogs Container -->
+                <div id="content-vlogs" class="category-content flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-8 pb-8 px-4 w-full">
+                    <div class="min-w-[85vw] md:min-w-[400px] flex-shrink-0 snap-center">
+                        <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/PANOYpAWQtA"></iframe>
+                    </div>
+                    <div class="min-w-[85vw] md:min-w-[400px] flex-shrink-0 snap-center">
+                        <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/J2shhMxf2JM"></iframe>
+                    </div>
+                    <div class="min-w-[85vw] md:min-w-[400px] flex-shrink-0 snap-center">
+                        <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/wCNkyoEOXds"></iframe>
+                    </div>
+                    <div class="min-w-[85vw] md:min-w-[400px] flex-shrink-0 snap-center">
+                        <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/mVgJjDvDqn4"></iframe>
+                    </div>
+                    <div class="min-w-[85vw] md:min-w-[400px] flex-shrink-0 snap-center">
+                        <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/j3XOwTn8p7g"></iframe>
+                    </div>
+                </div>
+
+                <!-- Podcast Container -->
+                <div id="content-podcast" class="category-content flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-8 pb-8 px-4 w-full hidden">
+                    <div class="min-w-[85vw] md:min-w-[400px] flex-shrink-0 snap-center">
+                        <iframe class="w-full aspect-video rounded-2xl glass" src="https://www.youtube.com/embed/zK0Ot-jieCA"></iframe>
+                    </div>
+                </div>
+
+                <!-- Branded Container -->
+                <div id="content-branded" class="category-content flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-6 pb-8 px-4 w-full hidden">
+                     <div class="min-w-[240px] flex-shrink-0 snap-center">
+                        <iframe class="w-full aspect-[9/16] rounded-2xl glass shadow-xl" src="https://www.youtube.com/embed/uEwSoK3VO4w" title="YouTube Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                     </div>
+                     <div class="min-w-[240px] flex-shrink-0 snap-center">
+                        <iframe class="w-full aspect-[9/16] rounded-2xl glass shadow-xl" src="https://www.instagram.com/reel/DNVY2oDyFzu/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                     </div>
+                     <div class="min-w-[240px] flex-shrink-0 snap-center bg-slate-900 rounded-2xl flex items-center justify-center overflow-hidden">
+                        <iframe class="w-full aspect-[9/16] rounded-2xl glass shadow-xl scale-[1.01]" src="https://www.youtube.com/embed/e_Uoo5nFAAA" title="YouTube Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                     </div>
+                     <div class="min-w-[240px] flex-shrink-0 snap-center bg-slate-900 rounded-2xl flex items-center justify-center overflow-hidden">
+                        <iframe class="w-full aspect-[9/16] rounded-2xl glass shadow-xl scale-[1.01]" src="https://www.instagram.com/p/DVD0QlWj5KF/embed/?hidecaption=1" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                     </div>
+                </div>
             </div>
         </div>
     </section>
@@ -127,7 +172,7 @@
                         <ul class="text-slate-400 space-y-2 list-none">
                             <li>• Edited, managed, and enhanced content quality for the main YouTube channel with over 2M+ subscribers.</li>
                             <li>• Produced and edited sponsored content for major brand collaborations.</li>
-                            <li>• Produced and edited sponsored content for major brand collaborations.</li>
+                            <li>• Delivered multi-format content like Podcasts, Shorts & Reels.</li>
                         </ul>
                     </div>
                 </div>
@@ -145,7 +190,7 @@
                         <ul class="text-slate-400 space-y-2 list-none">
                             <li>• Supervised end-to-end operations and workflow of a team of 15+ editors.</li>
                             <li>• Streamlined editing processes to improve efficiency.</li>
-                            <li>• Produced and edited sponsored content for major brand collaborations.</li>
+                            <li>• Optimized editing workflows to meet production deadlines.</li>
                         </ul>
                     </div>
                 </div>
@@ -161,9 +206,8 @@
                             <span class="text-sm text-slate-300 bg-slate-900/80 px-3 py-1 rounded-full border border-slate-700 w-fit">2023 - 2024</span>
                         </div>
                         <ul class="text-slate-400 space-y-2 list-none">
-                            <li>• Collaborated with global gaming creators (USA, Canada, Australia).</li>
-                            <li>• Scaled a U.S. Twitch streamer from 1k to 20.5k followers in 2.5 months.</li>
-                            <li>• Produced and edited sponsored content for major brand collaborations.</li>
+                            <li>• Collaborated with creative agencies like Modifica and Nextupcreators.</li>
+                            <li>• Edited high-quality content for global audiences.</li>
                         </ul>
                     </div>
                 </div>
@@ -207,14 +251,52 @@
     </footer>
 
     <script>
-        // Updated Category Logic to fix the event.target issue
+        // Helper function to center the slider
+        function centerSlider(container) {
+            if (!container) return;
+            // Short timeout ensures the container is fully rendered before calculating widths
+            setTimeout(() => {
+                const scrollPos = (container.scrollWidth - container.clientWidth) / 2;
+                container.scrollTo({ left: scrollPos, behavior: 'auto' });
+            }, 50);
+        }
+
+        // Updated Category Logic
         function showCategory(categoryId, btnElement) {
             document.querySelectorAll('.category-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
             
             const target = document.getElementById('content-' + categoryId);
-            if(target) target.classList.remove('hidden');
+            if(target) {
+                target.classList.remove('hidden');
+                centerSlider(target);
+            }
             if(btnElement) btnElement.classList.add('active');
+        }
+
+        // Initialize centering on page load for the default active tab
+        window.addEventListener('load', () => {
+            const activeContainer = document.querySelector('.category-content:not(.hidden)');
+            centerSlider(activeContainer);
+        });
+
+        // Slider Navigation Logic
+        function slideContent(direction) {
+            // Find the currently visible category container
+            const activeContainer = document.querySelector('.category-content:not(.hidden)');
+            if(!activeContainer) return;
+
+            // Determine scroll amount based on child width (approximate scroll per item)
+            const firstItem = activeContainer.children[0];
+            if(!firstItem) return;
+            
+            const scrollAmount = firstItem.offsetWidth + 32; // item width + gap
+
+            if(direction === 'left') {
+                activeContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                activeContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
         }
 
         // Mobile Menu Toggle Logic
